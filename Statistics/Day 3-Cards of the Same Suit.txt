@@ -1,0 +1,12 @@
+Task
+You draw 2 cards from a standard 52-card deck without replacing them. What is the probability that both cards are of the same suit?
+
+Solution:
+
+12/51
+
+During first draw,probability od drawing a card is 1. In the second draw, 12/51.
+
+So the total probability = 1 * 12/51 = 12/51.
+
+
