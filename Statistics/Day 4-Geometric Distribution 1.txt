@@ -1,0 +1,18 @@
+Task
+The probability that a machine produces a defective product is 1/3. What is the probability that the  defect is found during the 5th inspection?
+
+Input Format
+
+The first line contains the respective space-separated numerator and denominator for the probability of a defect, and the second line contains the inspection we want the probability of being the first defect for:
+
+1 3
+5
+If you do not wish to read this information from stdin, you can hard-code it into your program.
+
+Solution:
+
+n,d = map(int,input().split())
+p = n/d
+n_trial = int(input())
+result = (1-p)**(n_trial-1)* p 
+print("%.3f" %result)
