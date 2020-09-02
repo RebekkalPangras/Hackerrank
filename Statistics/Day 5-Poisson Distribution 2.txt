@@ -1,0 +1,30 @@
+Task
+The manager of a industrial plant is planning to buy a machine of either type  or type . For each day’s operation:
+
+The number of repairs, , that machine  needs is a Poisson random variable with mean . The daily cost of operating  is .
+The number of repairs, , that machine  needs is a Poisson random variable with mean . The daily cost of operating  is .
+Assume that the repairs take a negligible amount of time and the machines are maintained nightly to ensure that they operate like new at the start of each day. Find and print the expected daily cost for each machine.
+
+Input Format
+
+A single line comprised of  space-separated values denoting the respective means for  and :
+
+0.88 1.55
+If you do not wish to read this information from stdin, you can hard-code it into your program.
+
+Output Format
+
+There are two lines of output. Your answers must be rounded to a scale of  decimal places (i.e.,  format):
+
+On the first line, print the expected daily cost of machine .
+On the second line, print the expected daily cost of machine .
+
+Solution:
+
+mean_1, mean_2 = map(float,input().split())
+x_square = mean_1 + (mean_1**2)
+y_square = mean_2 + (mean_2**2)
+cost_a = 160 + 40 * x_square
+cost_b = 128 + 40 * y_square
+print("%.3f"%cost_a)
+print("%.3f"%cost_b)
