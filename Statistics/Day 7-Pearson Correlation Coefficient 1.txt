@@ -1,0 +1,60 @@
+Objective
+In this challenge, we practice calculating the Pearson correlation coefficient. Check out the Tutorial tab for learning materials!
+
+Task
+Given two -element data sets,  and , calculate the value of the Pearson correlation coefficient.
+
+Input Format
+
+The first line contains an integer, , denoting the size of data sets  and .
+The second line contains  space-separated real numbers (scaled to at most one decimal place), defining data set .
+The third line contains  space-separated real numbers (scaled to at most one decimal place), defining data set .
+
+Constraints
+
+, where  is the  value of data set .
+, where  is the  value of data set .
+Data set  contains unique values.
+Data set  contains unique values.
+Output Format
+
+Print the value of the Pearson correlation coefficient, rounded to a scale of  decimal places.
+
+Sample Input
+
+10
+10 9.8 8 7.8 7.7 7 6 5 4 2 
+200 44 32 24 22 17 15 12 8 4
+Sample Output
+
+0.612
+
+Solution:
+
+n = int(input())
+x = list(map(float,input().split()))
+y = list(map(float,input().split()))
+mean_x = 0
+mean_y = 0
+std_x = 0
+std_y = 0
+for i in range(n):
+    mean_x += x[i]
+    mean_y += y[i]
+mean_x = mean_x/n
+mean_y = mean_y/n
+variance_x = 0
+variance_y = 0
+for i in range(n):
+    variance_x += (x[i] - mean_x)**2
+    variance_y += (y[i] - mean_y)**2
+std_x = (variance_x/(n))**0.5
+std_y = (variance_y/(n))**0.5
+
+sum_value =  0
+
+for i in range(n):
+    sum_value += (x[i]-mean_x)*(y[i]-mean_y)
+
+correlation = sum_value / (n*std_x*std_y)
+print("%.3f"%correlation)
